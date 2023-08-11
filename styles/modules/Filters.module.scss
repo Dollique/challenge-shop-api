@@ -1,0 +1,10 @@
+@import "../mixins.scss";
+
+.filters {
+    flex: 0 1 auto;
+    margin-bottom: 26px;
+
+    @include for-tablet-portrait-up {
+        margin-right: var(--page-outline-width);
+    }
+}

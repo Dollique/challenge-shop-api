@@ -1,0 +1,13 @@
+@import "../mixins.scss";
+
+.products {
+    flex: 1 1 70%;
+    display: grid;
+    grid-gap: 2em;
+    align-content: flex-start;
+
+    @include for-tablet-portrait-up {
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 2em 3em;
+    }
+}

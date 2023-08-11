@@ -1,0 +1,12 @@
+@import "../mixins.scss";
+
+.main {
+  display: flex;
+  flex-direction: column;
+
+  margin: 16px var(--page-outline-width);
+
+  @include for-tablet-portrait-up {
+    flex-direction: row;
+  }
+}

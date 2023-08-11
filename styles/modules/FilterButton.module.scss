@@ -1,0 +1,36 @@
+@import "../mixins.scss";
+
+.filter__button {
+  width: 100%;
+
+  border: 0;
+  border-bottom: 1px solid rgb(var(--button-color));
+  padding: 6px 16px;
+
+  text-align: center;
+
+  @include for-tablet-portrait-up {
+    margin-bottom: 0;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &.active {
+    background-color: rgb(var(--primary-color));
+    color: rgb(var(--font-color-negative-rgb));
+  }
+
+  @include for-tablet-portrait-up {
+    &:hover {
+      cursor: pointer;
+      background-color: rgb(var(--primary-color));
+      color: rgb(var(--font-color-negative-rgb));
+    }
+  }
+}

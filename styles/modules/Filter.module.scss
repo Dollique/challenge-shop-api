@@ -1,0 +1,26 @@
+@import "../mixins.scss";
+
+.filter__filtergroup {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    @include for-tablet-portrait-up {
+        width: 100%;
+
+    }
+}
+
+.filter__title {
+    font-weight: bold;
+    margin: 0 0 16px 0;
+}
+
+.filter__buttons {
+    display: flex;
+    flex-direction: column;
+}
