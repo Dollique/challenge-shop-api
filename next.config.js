@@ -1,14 +1,11 @@
 /** @type {import('next').NextConfig} */
 
-const path = require('path')
-
 const nextConfig = {
   env: { // make env available for client side
     API_PATH: process.env.API_PATH,
     API_PRODUCT_PROPERTY_PATH: process.env.API_PRODUCT_PROPERTY_PATH,
   },
   reactStrictMode: true,
-  includePaths: [path.join(__dirname, 'styles')],
   async rewrites() {
     return [
       {
