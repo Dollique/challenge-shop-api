@@ -1,25 +1,30 @@
 /** @type {import('next').NextConfig} */
 
+const API_PATH = process.env.API_PATH;
+const API_HOST = process.env.API_HOST;
+const API_IMG_PROTOCOL = process.env.API_IMG_PROTOCOL;
+const API_IMG_HOST = process.env.API_IMG_HOST;
+
 const nextConfig = {
   env: { // make env available for client side
-    API_PATH: process.env.API_PATH,
+    API_PATH,
     API_PRODUCT_PROPERTY_PATH: process.env.API_PRODUCT_PROPERTY_PATH,
   },
   reactStrictMode: true,
   async rewrites() {
     return [
       {
-        source: process.env.API_SRC,
-        destination: process.env.API_DEST,
+        source: `${API_PATH}:slug*`,
+        destination: `https://${API_HOST}${API_PATH}:slug*`,
       },
     ]
   },
   images: {
-    domains: [process.env.API_IMG_URL],
+    domains: [`${API_IMG_PROTOCOL}://${API_IMG_HOST}`],
     remotePatterns: [
       {
-        protocol: process.env.API_IMG_PROTOCOL,
-        hostname: process.env.API_IMG_HOST,
+        protocol: API_IMG_PROTOCOL,
+        hostname: API_IMG_HOST,
         port: '',
         pathname: '/**',
       },
