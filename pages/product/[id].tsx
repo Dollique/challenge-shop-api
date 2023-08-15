@@ -12,7 +12,7 @@ export default function Page() {
       if (!process.env.API_PATH) {
         throw new Error('API path not defined');
       } else {
-        const response = await fetch(process.env.API_PATH);
+        const response = await fetch('/api' + process.env.API_PATH);
         let newData = await response.json();
         newData = sanitizeData(newData);
 

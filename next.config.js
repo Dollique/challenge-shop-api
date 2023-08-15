@@ -11,14 +11,6 @@ const nextConfig = {
     API_PRODUCT_PROPERTY_PATH: process.env.API_PRODUCT_PROPERTY_PATH,
   },
   reactStrictMode: true,
-  async rewrites() {
-    return [
-      {
-        source: `${API_PATH}:slug*`,
-        destination: `https://${API_HOST}${API_PATH}:slug*`,
-      },
-    ]
-  },
   images: {
     domains: [`${API_IMG_PROTOCOL}://${API_IMG_HOST}`],
     remotePatterns: [

@@ -20,7 +20,7 @@ const Home: React.FC = () => {
       if (!process.env.API_PATH) {
         throw new Error('API path not defined');
       } else {
-        const response = await fetch(process.env.API_PATH);
+        const response = await fetch('/api' + process.env.API_PATH);
         if (!response.ok) {
           console.error(`${response.status} error response`, response);
           throw new Error(`Resource not found (check console): ${response.status}`);
